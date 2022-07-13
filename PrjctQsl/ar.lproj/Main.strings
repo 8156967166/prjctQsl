@@ -1,0 +1,69 @@
+
+/* Class = "UIButton"; configuration.title = "Sign Up"; ObjectID = "3xM-J7-5sM"; */
+"3xM-J7-5sM.configuration.title" = "Sign Up";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3xM-J7-5sM"; */
+"3xM-J7-5sM.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4PC-Zv-3E9"; */
+"4PC-Zv-3E9.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4Tj-XU-jJK"; */
+"4Tj-XU-jJK.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9Ac-gj-psa"; */
+"9Ac-gj-psa.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Sign In"; ObjectID = "BQ2-wL-sJH"; */
+"BQ2-wL-sJH.configuration.title" = "Sign In";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "BQ2-wL-sJH"; */
+"BQ2-wL-sJH.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Don’t have an account ?"; ObjectID = "FNn-hA-SbD"; */
+"FNn-hA-SbD.configuration.title" = "Don’t have an account ?";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "FNn-hA-SbD"; */
+"FNn-hA-SbD.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "MTq-Hi-6HS"; */
+"MTq-Hi-6HS.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Or"; ObjectID = "PU4-hK-ZGT"; */
+"PU4-hK-ZGT.text" = "Or";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "Rfy-cC-9o8"; */
+"Rfy-cC-9o8.placeholder" = "password";
+
+/* Class = "UILabel"; text = "SIGN IN"; ObjectID = "SuO-3m-hg9"; */
+"SuO-3m-hg9.text" = "SIGN IN";
+
+/* Class = "UILabel"; text = "العربية"; ObjectID = "YjH-GT-g5X"; */
+"YjH-GT-g5X.text" = "العربية";
+
+/* Class = "UIButton"; configuration.title = "Forgot Password ?"; ObjectID = "bl6-6U-x7M"; */
+"bl6-6U-x7M.configuration.title" = "Forgot Password ?";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bl6-6U-x7M"; */
+"bl6-6U-x7M.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "deX-rB-Z4a"; */
+"deX-rB-Z4a.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "mobile or email"; ObjectID = "ppv-ey-nS4"; */
+"ppv-ey-nS4.placeholder" = "mobile or email";
+
+/* Class = "UILabel"; text = "Please Enter Your Info To Sign You In"; ObjectID = "qhr-lx-BPb"; */
+"qhr-lx-BPb.text" = "Please Enter Your Info To Sign You In";
+
+/* Class = "UILabel"; text = "العربية"; ObjectID = "s4Q-8K-a3W"; */
+"s4Q-8K-a3W.text" = "العربية";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uTW-td-g4I"; */
+"uTW-td-g4I.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Continue As Guest"; ObjectID = "zWf-FP-Uzo"; */
+"zWf-FP-Uzo.configuration.title" = "Continue As Guest";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "zWf-FP-Uzo"; */
+"zWf-FP-Uzo.normalTitle" = "Button";

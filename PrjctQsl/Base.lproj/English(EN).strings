@@ -1,0 +1,38 @@
+/* 
+  English(EN).strings
+  PrjctQsl
+
+  Created by Bimal@AppStation on 06/07/22.
+  
+*/
+
+"key_Login" = "Login En";
+"key_UpperCaseSignIn" = "SIGN IN";
+"Key_Arabic" = "العربية";
+"key_PleaseEnter" = "Please Enter Your Info To Sign You In";
+"key_ForgotPassword" = "Forgot Password";
+"key_LowerCaseSignIn" = "Sign In";
+"key_Don'tHaveAccount" = "Don’t have an account ?";
+"key_SignUp" = "Sign Up";
+"key_Or" = "Or";
+"key_ContinueAsGuest" = "Continue As Guest";
+"Key_SIGNUP" = "SIGN UP";
+"key_PleaseEnterUp" = "Please Enter Your Info To Sign You Up";
+"key_IAccept" = "I Accept The";
+"key_TermsAndConditions" = "Terms And Conditions";
+"key_Doyouhaveanaccount?" = "Do you have an account?";
+"Key_MobileOrEmail" = "mobile or email";
+"key_Password" = "password";
+"key_fullName" = "full name";
+"key_code" = "code";
+"key_Mobile" = "mobile";
+"key_Email" = "email";
+"key_Gender" = "gender";
+"key_Country" = "country";
+"key_ConfirmPassword" = "confirm password";
+
+"key_Network_Error" = "Please check your internet connection";
+"key_Alert" = "Alert";
+"key_Ok" = "Ok";
+"key_EmailNotEnterAlert" = "Please enter your email address";
+"key_PasswordNotEnterAlert" = "Please enter your password";

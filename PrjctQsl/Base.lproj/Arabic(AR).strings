@@ -1,0 +1,37 @@
+/* 
+  Arabic(AR).strings
+  PrjctQsl
+
+  Created by Bimal@AppStation on 06/07/22.
+  
+*/
+"key_Login" = "تسجيل الدخول";
+"key_UpperCaseSignIn" = "تسجيل الدخول";
+"Key_Arabic" = "English";
+"key_PleaseEnter" = "الرجاء إدخال المعلومات الخاصة بك لتسجيل الدخول";
+"key_ForgotPassword" = "هل نسيت كلمة السر";
+"key_LowerCaseSignIn" = "تسجيل الدخول";
+"key_Don'tHaveAccount" = "ليس لديك حساب؟";
+"key_SignUp" = "اشتراك";
+"key_Or" = "أو";
+"key_ContinueAsGuest" = "تواصل كضيف";
+"Key_SIGNUP" = "اشتراك";
+"key_PleaseEnterUp" = "الرجاء إدخال المعلومات الخاصة بك للتسجيل";
+"key_IAccept" = "أقبل";
+"key_TermsAndConditions" = "الأحكام والشروط";
+"key_Doyouhaveanaccount?" = "هل لديك حساب؟";
+"Key_MobileOrEmail" = "المحمول أو البريد الإلكتروني";
+"key_Password" = "كلمه السر";
+"key_fullName" = "الاسم الكامل";
+"key_code" = "الاسم الكامل";
+"key_Mobile" = "التليفون المحمول";
+"key_Email" = "البريد الإلكتروني";
+"key_Gender" = "جنس";
+"key_Country" = "بلد";
+"key_ConfirmPassword" = "تأكيد كلمة المرور";
+
+"key_Network_Error" = "الرجاء التحقق من اتصال الانترنت الخاص بك";
+"key_Alert" = "انذار";
+"key_Ok" = "موافق";
+"key_EmailNotEnterAlert" = "الرجاء إدخال عنوان البريد الإلكتروني الخاص بك";
+"key_PasswordNotEnterAlert" = "من فضلك أدخل رقمك السري";

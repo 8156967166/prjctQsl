@@ -1,0 +1,6 @@
+framework module Pods_PrjctQsl {
+  umbrella header "Pods-PrjctQsl-umbrella.h"
+
+  export *
+  module * { export * }
+}
