@@ -53,13 +53,19 @@ struct ConstantString {
     static let BLOCKAT_SNAPCHAT_ID = "blockatboutique"
     static let BLOCKAT_WHATSAPP = "50888154"
     static let BLOCKAT_CONTACT_PHONE = "50888154"
+    
+    static let USER_NAME = "user_name"
+    static let PASSWORD = "password"
+    static let FULL_Name = "full_name"
+    static let Email = "email"
+    static let GENDER = "gender"
+    static let CONFIRM_PASSWORD = "confirm_password"
+    static let PHONE_NUMBER = "mobile"
 }
 
 struct ConstantAPI {
     //static let k_ROOT_WEBSERVICE:String = Config.isAppDevelopment ? "https://ecapp.ml/api/v1/" : "https://ecapp.ml/api/v1/"
     static let k_ROOT_WEBSERVICE:String = Config.isAppDevelopment ? "http://devqslwa.azurewebsites.net/" : "http://devqslwa.azurewebsites.net/"
-
-    
 
 
     static let k_REQUEST_BOUNDARY:String = "---011000010111000001101001"
@@ -72,7 +78,8 @@ struct ConstantAPI {
     static let WEBSERVICE_USER_LOGIN             = "api/qsl/user/login"
     
     
-    static let WEBSERVICE_USER_REGISTRATION:String    = "registration"
+//    static let WEBSERVICE_USER_REGISTRATION:String    = "registration"
+    static let WEBSERVICE_USER_REGISTRATION:String    = "api/qsl/user/registration"
     static let WEBSERVICE_TERMS_SERVICE             = "masterData"
     static let WEBSERVICE_VERIFY_OTP             = "activeBySmsCode"
     static let WEBSERVICE_RESEND_OTP             = "resendVerificationCode"

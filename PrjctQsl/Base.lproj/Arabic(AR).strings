@@ -35,3 +35,8 @@
 "key_Ok" = "موافق";
 "key_EmailNotEnterAlert" = "الرجاء إدخال عنوان البريد الإلكتروني الخاص بك";
 "key_PasswordNotEnterAlert" = "من فضلك أدخل رقمك السري";
+"key_FullNameNotEnterAlert" = "من فضلك ادخل اسمك الكامل";
+"key_GenderNotEnterAlert" = "الرجاء إدخال جنسك";
+"key_ConfirmPasswordAlert" = "من فضلك أعد إدخال الرمز السري";
+"key_CountryAlert" = "الرجاء تحديد بلدك";
+"key_PhoneNumberAlert" = "يرجى إدخال رقم الهاتف الخاص بك";

@@ -36,3 +36,8 @@
 "key_Ok" = "Ok";
 "key_EmailNotEnterAlert" = "Please enter your email address";
 "key_PasswordNotEnterAlert" = "Please enter your password";
+"key_FullNameNotEnterAlert" = "Please enter your full name";
+"key_GenderNotEnterAlert" = "Please enter you gender";
+"key_ConfirmPasswordAlert" = "Please reenter your password";
+"key_CountryAlert" = "Please select your country";
+"key_PhoneNumberAlert" = "Please enter your phone number";

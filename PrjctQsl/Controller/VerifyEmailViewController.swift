@@ -1,13 +1,13 @@
 //
-//  EnterOptViewController.swift
+//  VerifyEmailViewController.swift
 //  PrjctQsl
 //
-//  Created by Bimal@AppStation on 08/07/22.
+//  Created by Bimal@AppStation on 13/07/22.
 //
 
 import UIKit
 
-class EnterOptViewController: UIViewController, UITextFieldDelegate {
+class VerifyEmailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var labelPleaseEnter: UILabel!
     @IBOutlet weak var textFieldFirstNumberOfOtp: UITextField!
     @IBOutlet weak var textFieldSecondNumberOfOtp: UITextField!
@@ -15,8 +15,6 @@ class EnterOptViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldFourthNumberOfOtp: UITextField!
     @IBOutlet weak var textFieldFifthNumberOfOtp: UITextField!
 
-//    @IBOutlet weak var labelGetPhoneNumber: UILabel?
-    var getPhoneNumber = String()
     var getEmail = String()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +23,9 @@ class EnterOptViewController: UIViewController, UITextFieldDelegate {
         textFieldThirdNumberOfOtp.delegate = self
         textFieldFourthNumberOfOtp.delegate = self
         textFieldFifthNumberOfOtp.delegate = self
-//        labelGetPhoneNumber?.text = getPhoneNumber
-//        labelGetPhoneNumber?.layer.backgroundColor = UIColor.orange.cgColor
-        labelPleaseEnter.text = "Please Enter The Code Sent To The Number \(getPhoneNumber) "
-        // Do any additional setup after loading the view.
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         setGradientBackground()
+        self.labelPleaseEnter.text = "Please Enter The Code Sent To The Email \(getEmail)"
+        // Do any additional setup after loading the view.
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let maxLength = 1
@@ -41,7 +34,6 @@ class EnterOptViewController: UIViewController, UITextFieldDelegate {
 
         return newString.count <= maxLength
     }
-    
     func setGradientBackground() {
         let colorTop = UIColor(red: 69.0/255.0, green: 6.0/255.0, blue: 42.0/255.0, alpha: 1.0).cgColor
         let colorBottom = UIColor(red: 100.0/255.0, green: 1.0/255.0, blue: 45.0/255.0, alpha: 1.0).cgColor
@@ -51,13 +43,8 @@ class EnterOptViewController: UIViewController, UITextFieldDelegate {
         gradientLayer.frame = self.view.bounds
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
-    @IBAction func buttonActionVerifyEmail(sender: UIButton) {
-        self.performSegue(withIdentifier: "VerifyEmailViewController", sender: nil)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? VerifyEmailViewController {
-            vc.getEmail = getEmail
-        }
+    @IBAction func buttonActionVerifyByPhone(sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
 
 }

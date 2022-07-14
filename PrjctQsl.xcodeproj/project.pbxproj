@@ -26,6 +26,7 @@
 		CE9F5487287C02D900AA20EA /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F5486287C02D900AA20EA /* CollectionViewController.swift */; };
 		CE9F5489287C02F200AA20EA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F5488287C02F200AA20EA /* CollectionViewCell.swift */; };
 		CEA73809287DA51100848089 /* APINetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA73808287DA51100848089 /* APINetworkController.swift */; };
+		CEAD353F287E901E00B1259F /* VerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD353E287E901E00B1259F /* VerifyEmailViewController.swift */; };
 		CEC8EF0428731EE700A5A011 /* QslRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8EF0328731EE700A5A011 /* QslRegistration.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		CE9F5486287C02D900AA20EA /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		CE9F5488287C02F200AA20EA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		CEA73808287DA51100848089 /* APINetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APINetworkController.swift; sourceTree = "<group>"; };
+		CEAD353E287E901E00B1259F /* VerifyEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewController.swift; sourceTree = "<group>"; };
 		CEC8EEFA2873046C00A5A011 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		CEC8EEFB2873046C00A5A011 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CEC8EF0328731EE700A5A011 /* QslRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QslRegistration.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				CE98C0CE287433DF0034D8FE /* TermsAndConditionsViewController.swift */,
 				CE65FC792878313A000613B0 /* EnterOptViewController.swift */,
 				CE9F5486287C02D900AA20EA /* CollectionViewController.swift */,
+				CEAD353E287E901E00B1259F /* VerifyEmailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9F5487287C02D900AA20EA /* CollectionViewController.swift in Sources */,
+				CEAD353F287E901E00B1259F /* VerifyEmailViewController.swift in Sources */,
 				CE9D3A352875BF660024686F /* CustomViews.swift in Sources */,
 				CE446E78286ED48400271602 /* QslViewController.swift in Sources */,
 				CEC8EF0428731EE700A5A011 /* QslRegistration.swift in Sources */,

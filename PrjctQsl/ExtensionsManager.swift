@@ -52,3 +52,14 @@ extension UIView{
         self.layer.add(rotation, forKey: "rotationAnimation")
     }
 }
+
+extension Dictionary where Key == String {
+func toJSON() -> String {
+        if let theJSONData = try? JSONSerialization.data(withJSONObject: self, options: []) {
+            if let theJSONText = String(data: theJSONData, encoding: .ascii) {
+                return theJSONText
+            }
+        }
+        return ConstantString.k_EMPTY
+    }
+}

@@ -33,9 +33,23 @@ class QslRegistrationViewController: SJViewController, UITextFieldDelegate {
     @IBOutlet weak var labelPassword: UILabel!
     @IBOutlet weak var labelConfirmPassword: UILabel!
     @IBOutlet weak var labelCountryEmpty: UILabel!
+    @IBOutlet weak var viewEmail: UIView!
+    @IBOutlet weak var viewFullName: UIView!
+    @IBOutlet weak var viewGender: UIView!
+    @IBOutlet weak var viewCountry: UIView!
+    @IBOutlet weak var viewPassword: UIView!
+    @IBOutlet weak var viewConfirmPassword: UIView!
+    @IBOutlet weak var viewPhone: UIView!
     var iconClick = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewFullName.isHidden = true
+        viewEmail.isHidden = true
+        viewGender.isHidden = true
+        viewCountry.isHidden = true
+        viewPassword.isHidden = true
+        viewConfirmPassword.isHidden = true
+        viewPhone.isHidden = true
         addDoneButtonOnKeyboard()
         notificationKeyboard()
         self.imageTopRotate.rotated()
@@ -177,25 +191,73 @@ class QslRegistrationViewController: SJViewController, UITextFieldDelegate {
         print("SignIN clicked")
     }
     @IBAction func buttonActionSignUp(sender: UIButton) {
+        print("SignUp Button Clicked")
+        viewFullName.isHidden = true
+        viewEmail.isHidden = true
+        viewGender.isHidden = true
+        viewCountry.isHidden = true
+        viewPassword.isHidden = true
+        viewConfirmPassword.isHidden = true
+        viewPhone.isHidden = true
+        labelFullName.text = ""
+        labelEmail.text = ""
+        labelGender.text = ""
+        labelCountryEmpty.text = ""
+        labelPassword.text = ""
+        labelConfirmPassword.text = ""
+        labelPhoneNumber.text = ""
         callRegisterApi()
-        if(textFieldFullName.text == "" || textFieldCode.text == "" || textFieldPhone.text == "" || textFieldEmail.text == "" || textFieldGender.text == "" || textFieldPassword.text == "" || textFieldConfirmPassword.text == "") {
-            let alertController = UIAlertController(title: "Error", message: "Please Enter All text Fields", preferredStyle: .alert)
-                   let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                   alertController.addAction(defaultAction)
-                   self.present(alertController, animated: true, completion: nil)
+        if textFieldFullName.text == "" {
+            viewFullName.isHidden = false
+            self.labelFullName.text = SJLocalisedString["key_FullNameNotEnterAlert"]
         }
+        if textFieldEmail.text == "" {
+            viewEmail.isHidden = false
+            self.labelEmail.text = SJLocalisedString["key_EmailNotEnterAlert"]
+        }
+        if textFieldGender.text == "" {
+            viewGender.isHidden = false
+            self.labelGender.text = SJLocalisedString["key_GenderNotEnterAlert"]
+        }
+        if labelCountry.text == "" {
+            viewCountry.isHidden = false
+            self.labelCountryEmpty.text = SJLocalisedString["key_CountryAlert"]
+        }
+        if textFieldPassword.text == "" {
+            viewPassword.isHidden = false
+            self.labelPassword.text = SJLocalisedString["key_PasswordNotEnterAlert"]
+        }
+        if textFieldConfirmPassword.text == "" {
+            viewConfirmPassword.isHidden = false
+            self.labelConfirmPassword.text = SJLocalisedString["key_ConfirmPasswordAlert"]
+        }
+        if (textFieldPhone.text == "" || textFieldCode.text == "") {
+            viewPhone.isHidden = false
+            self.labelPhoneNumber.text = SJLocalisedString["key_PhoneNumberAlert"]
+        }
+        
+//        if(textFieldFullName.text == "" || textFieldCode.text == "" || textFieldPhone.text == "" || textFieldEmail.text == "" || textFieldGender.text == "" || textFieldPassword.text == "" || textFieldConfirmPassword.text == "") {
+//            let alertController = UIAlertController(title: "Error", message: "Please Enter All text Fields", preferredStyle: .alert)
+//                   let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//                   alertController.addAction(defaultAction)
+//                   self.present(alertController, animated: true, completion: nil)
+//        }
             if textFieldPassword.text != textFieldConfirmPassword.text {
                 let alertController = UIAlertController(title: "Error", message: "Password don't match", preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
             }
-        self.performSegue(withIdentifier: "EnterOptViewController", sender: nil)
+        if(textFieldFullName.text != "" && textFieldEmail.text != "" && textFieldGender.text != "" && textFieldPassword.text != "" && textFieldConfirmPassword.text != "" && labelCountry.text != "" && textFieldPhone.text != "" && textFieldCode.text != "") {
+            self.performSegue(withIdentifier: "EnterOptViewController", sender: nil)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? EnterOptViewController {
             vc.getPhoneNumber = textFieldPhone.text ?? ""
+            vc.getEmail = textFieldEmail.text ?? ""
         }
     }
     
@@ -220,35 +282,64 @@ extension UIView{
         self.layer.add(rotation, forKey: "rotationAnimation")
     }
 }
-extension  QslRegistrationViewController {
+extension QslRegistrationViewController {
     func callRegisterApi() {
         if AppController.shared.checkInternetAvailability() {
-            let networkCntrl = APINetworkController();
-            let objRequest = AppBaseRequest(ConstantAPI.WEBSERVICE_USER_LOGIN, ConstantAPI.k_REQUEST_TYPE_POST);
-            networkCntrl.callWebserviceRequest(objRequest) { objResponse in
+            let nwctrl = APINetworkController();
+            let objRequest = AppBaseRequest(ConstantAPI.WEBSERVICE_USER_REGISTRATION, ConstantAPI.k_REQUEST_TYPE_POST);
+///            objRequest.rawParam = "{\"user_name\":\"kannan@applab.qa\",\"password\":\"12345678\"}"
+//
+            objRequest.rawParam = ["full_name":"\(textFieldFullName.text ?? "")",
+                                   "email":"\(textFieldEmail.text ?? "")", "gender":"\(textFieldGender.text ?? "")", "country":"\(labelCountry.text ?? "")", "password":"\(textFieldPassword.text ?? "")", "confirm_password":"\(textFieldConfirmPassword.text ?? "")", "mobile": "\(textFieldPhone.text ?? "")" ].toJSON()
+//            objRequest.rawParam = ["user_name":"",
+//                                   "password":""].toJSON()
+//
+            nwctrl.callWebserviceRequest(objRequest) { objResponse in
                 if objResponse.api_status == true {
-                    
+                    self.showAlert(message: "Success")
                 }
                 else {
-                    if let response = objResponse.resultData as? [String: Any] {
-                        if let errors = response["errors"] as? [String: Any] {
-                            if let first_name = errors["first_name"] as? [String], !first_name.isEmpty {
-                                DispatchQueue.main.async {
-                                    if (self.textFieldFullName.text ?? "").isEmpty {
-                                        self.labelFullName.text = "\(first_name[0])"
-                                    }
+//                    if let response = objResponse.resultData as? [String: Any] {
+//                        print(response)
+//                        print("response ......")
+//                        if let errors = response["errors"] as? [String:Any] {
+//                        print(errors)
+                    if let errors = objResponse.errors as? [String:Any] {
+                        print(errors)
+                        if let email = errors["email"] as? [String], !email.isEmpty {
+                            print(email[0])
+                            DispatchQueue.main.async {
+                                if (self.textFieldFullName.text ?? "").isEmpty {
+                                    self.viewFullName.isHidden = false
+                                    self.labelFullName.text = "\(email[0])"
+                                }
+                            }
+                        }
+                        if let password = errors["password"] as? [String], !password.isEmpty {
+                            print(password[0])
+                            DispatchQueue.main.async {
+                                if (self.textFieldEmail.text ?? "").isEmpty {
+                                    self.viewEmail.isHidden = false
+                                    self.labelEmail.text = "\(password[0])"
                                 }
                             }
                         }
                     }
+                    else if let message = objResponse.errorMsg as? String {
+                            print(message)
+                            self.showAlert(message: objResponse.errorMsg)
+                        }
+//                    self.showAlert(message: "Error")
                 }
             }
         }
+//        }
         else {
             self.showAlert(message: "Network Error")
         }
     }
 }
+    
 
 
 //if cellModel.isSelect == true {

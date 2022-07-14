@@ -131,6 +131,14 @@ class QslSignInViewController: SJViewController, UITextFieldDelegate {
         viewEmail.isHidden = true
         viewPassword.isHidden = true
         callLoginAPI()
+        if (self.textFieldMobile.text ?? "").isEmpty {
+            self.viewEmail.isHidden = false
+            self.labelEmailNotEnter.text = SJLocalisedString["key_EmailNotEnterAlert"]
+        }
+        if (self.textFieldPassword.text ?? "").isEmpty {
+            self.viewPassword.isHidden = false
+            self.labelPasswordNotEnter.text = SJLocalisedString["key_PasswordNotEnterAlert"]
+        }
         print("SignIn button Clicked")
 //        setEmptyTextField()
     }
@@ -195,37 +203,42 @@ extension QslSignInViewController {
             let objRequest = AppBaseRequest(ConstantAPI.WEBSERVICE_USER_LOGIN, ConstantAPI.k_REQUEST_TYPE_POST);
 //            objRequest.addParam(key: "email", value: "")
 //            objRequest.addParam(key: "password", value: "")
-            objRequest.rawParam = "{\"user_name\":\"kannan@applab.qa\",\"password\":\"12345678\"}"
-            
+///            objRequest.rawParam = "{\"user_name\":\"kannan@applab.qa\",\"password\":\"12345678\"}"
+//
+            objRequest.rawParam = ["user_name":"\(textFieldMobile.text ?? "")",
+                                   "password":"\(textFieldPassword.text ?? "")"].toJSON()
+//            objRequest.rawParam = ["user_name":"",
+//                                   "password":""].toJSON()
+//
             nwctrl.callWebserviceRequest(objRequest) { objResponse in
                 if objResponse.api_status == true {
                     self.showAlert(message: "Success")
                 }
                 else {
-                    if let response = objResponse.resultData as? [String: Any] {
-                        print(response)
-                        print("response ......")
-                        if let errors = response["errors"] as? [String:Any] {
-                            print(errors)
-                            if let email = errors["email"] as? [String], !email.isEmpty {
-                                print(email[0])
-                                    DispatchQueue.main.async {
-                                        if (self.textFieldMobile.text ?? "").isEmpty {
-                                            self.viewEmail.isHidden = false
-                                        self.labelEmailNotEnter.text = "\(email[0])"
-                                    }
-                                }
-                            }
-                            if let password = errors["password"] as? [String], !password.isEmpty {
-                                print(password[0])
-                                DispatchQueue.main.async {
-                                    if (self.textFieldPassword.text ?? "").isEmpty {
-                                        self.viewPassword.isHidden = false
-                                        self.labelPasswordNotEnter.text = "\(password[0])"
-                                    }
+                    if let errors = objResponse.errors as? [String:Any] {
+                        print(errors)
+                        if let email = errors["email"] as? [String], !email.isEmpty {
+                            print(email[0])
+                            DispatchQueue.main.async {
+                                if (self.textFieldMobile.text ?? "").isEmpty {
+                                    self.viewEmail.isHidden = false
+                                    self.labelEmailNotEnter.text = "\(email[0])"
                                 }
                             }
                         }
+                        if let password = errors["password"] as? [String], !password.isEmpty {
+                            print(password[0])
+                            DispatchQueue.main.async {
+                                if (self.textFieldPassword.text ?? "").isEmpty {
+                                    self.viewPassword.isHidden = false
+                                    self.labelPasswordNotEnter.text = "\(password[0])"
+                                }
+                            }
+                        }
+                    }
+                    else if let message = objResponse.errorMsg as? String {
+                        print(message)
+                        self.showAlert(message: objResponse.errorMsg)
                     }
 //                    self.showAlert(message: "Error")
                 }
